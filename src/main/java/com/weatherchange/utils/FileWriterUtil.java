@@ -50,18 +50,20 @@ public class FileWriterUtil {
 
     private static void writeRecord(Record record) throws IOException {
         String id = String.format(Constants.ID, record.getId(), record.getStrDate());
-        bw.write(String.format(Constants.W_MEASURE, id));
-        bw.write(String.format(Constants.DATEM, id, record.getDate()));
-        bw.write(String.format(Constants.ST_MEASURE, id, record.getId()));
-        bw.write(String.format(Constants.TFLAG, id, record.getTflag()));
-        bw.write(String.format(Constants.QTMIN, id, record.getQtmin()));
-        bw.write(String.format(Constants.QTMEAN, id, record.getQtmean()));
-        bw.write(String.format(Constants.QTMAX, id, record.getQtmax()));
-        bw.write(String.format(Constants.QR, id, record.getQr()));
-        bw.write(String.format(Constants.CR, id, record.getCr()));
-        bw.write(String.format(Constants.TMEAN, id, record.getTmean()));
-        bw.write(String.format(Constants.TMIN, id, record.getTmin()));
-        bw.write(String.format(Constants.TMAX, id, record.getTmax()));
-        bw.write(String.format(Constants.PRECIP, id, record.getR()));
+        bw.write(
+                String.format(Constants.W_MEASURE, id) +
+                        String.format(Constants.DATEM, id, record.getDate()) +
+                        String.format(Constants.ST_MEASURE, id, record.getId()) +
+                        String.format(Constants.TFLAG, id, record.getTflag()) +
+                        String.format(Constants.QTMIN, id, record.getQtmin()) +
+                        String.format(Constants.QTMEAN, id, record.getQtmean()) +
+                        String.format(Constants.QTMAX, id, record.getQtmax()) +
+                        String.format(Constants.QR, id, record.getQr()) +
+                        String.format(Constants.CR, id, record.getCr()) +
+                        String.format(Constants.TMEAN, id, record.getTmean()) +
+                        String.format(Constants.TMIN, id, record.getTmin()) +
+                        String.format(Constants.TMAX, id, record.getTmax()) +
+                        String.format(Constants.PRECIP, id, record.getR())
+        );
     }
 }

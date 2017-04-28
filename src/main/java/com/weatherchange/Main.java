@@ -6,9 +6,12 @@ import com.weatherchange.utils.FileWriterUtil;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("en", "US"));
+
         File folder = new File(Constants.SOURCE_PATH);
         File[] listOfFiles = folder.listFiles();
 
